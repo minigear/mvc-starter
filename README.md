@@ -9,6 +9,11 @@
 * Jackson Json
 * Logback
 
+## APPILACTION
+* nameCard
+  * API
+  * WEB(JSP)
+
 ## TODO
 * Spring Profile
   * local
