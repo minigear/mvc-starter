@@ -13,8 +13,8 @@ import javax.annotation.Resource;
 @RequestMapping("namecards")
 public class NameCardController {
 
-    @Autowired
-    private NameCardService nameCardService;
+//    @Autowired
+//    private NameCardService nameCardService;
 
     @RequestMapping(name = "", method = RequestMethod.GET)
     public String page(){
@@ -24,13 +24,13 @@ public class NameCardController {
     @RequestMapping(name = "", method = RequestMethod.GET, produces = "application/json")
     public @ResponseBody NameCard get(){
 
-        NameCard nameCard = new NameCard();
+//        NameCard nameCard = new NameCard();
+//
+//        nameCard.setId(1);
+//
+//        nameCard = nameCardService.getNamecard(nameCard);
 
-        nameCard.setId(1);
-
-        nameCard = nameCardService.getNamecard(nameCard);
-
-        return nameCard;
+        return null;
     }
 
 

@@ -8,7 +8,7 @@ import sun.net.spi.nameservice.NameService;
 import javax.annotation.Resource;
 import java.util.List;
 
-@Service("NameCardService")
+//@Service("NameCardService")
 public class NameCardServiceImpl implements NameCardService {
 
     @Autowired

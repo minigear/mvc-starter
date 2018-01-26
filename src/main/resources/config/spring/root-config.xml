@@ -8,7 +8,7 @@
     <import resource="aop-config.xml"/>
     <import resource="datasource-config.xml"/>
     <import resource="tx-config.xml"/>
-    <import resource="mybatis-config.xml"/>
+    <!--<import resource="mybatis-config.xml"/>-->
 
 
 </beans>

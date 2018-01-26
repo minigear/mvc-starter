@@ -10,6 +10,13 @@ public class NameCard {
     private String phoneNumber;
     private String memo;
 
+    public NameCard(long id, String name, String phonenumber, String memo) {
+        this.id = id;
+        this.name = name;
+        this.phoneNumber = phonenumber;
+        this.memo = memo;
+    }
+
     public long getId() {
         return id;
     }

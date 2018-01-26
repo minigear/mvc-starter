@@ -4,13 +4,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
     <beans profile="local">
-        <util:properties id="config" location="classpath:config/properties/local.properties" />
+        <util:properties id="jdbc" location="classpath:config/properties/jdbc.local.properties" />
     </beans>
     <beans profile="dev">
-        <util:properties id="config" location="classpath:config/properties/dev.properties" />
+        <util:properties id="jdbc" location="classpath:config/properties/jdbc.dev.properties" />
     </beans>
     <beans profile="prd">
-        <util:properties id="config" location="classpath:config/properties/prd.properties" />
+        <util:properties id="jdbc" location="classpath:config/properties/jdbc.prd.properties" />
     </beans>
 
 

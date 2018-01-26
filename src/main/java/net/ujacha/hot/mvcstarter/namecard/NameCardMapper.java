@@ -5,7 +5,7 @@ import org.apache.ibatis.annotations.Select;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.stereotype.Repository;
 
-@Repository("nameCardMapper")
+//@Repository("nameCardMapper")
 @Mapper
 public interface NameCardMapper {
 
