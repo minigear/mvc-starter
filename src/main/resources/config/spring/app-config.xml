@@ -14,8 +14,8 @@
     </context:component-scan>
 
 
-    <bean id="namecardDao" class="net.ujacha.hot.mvcstarter.namecard.NameCardDao"
-          p:dataSource-ref="dataSource"
-    />
+    <!--<bean id="nameCardInit" class="net.ujacha.hot.mvcstarter.namecard.NameCardInit"-->
+          <!--p:dataSource-ref="dataSource"-->
+    <!--/>-->
 
 </beans>

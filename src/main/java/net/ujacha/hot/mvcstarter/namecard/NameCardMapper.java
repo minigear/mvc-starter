@@ -1,15 +1,14 @@
 package net.ujacha.hot.mvcstarter.namecard;
 
-import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.stereotype.Repository;
 
-//@Repository("nameCardMapper")
-@Mapper
+import java.util.List;
+
 public interface NameCardMapper {
 
-    @Select("SELECT * FROM namecard WHERE id = #{id}")
-    NameCard getNameCard(NameCard nameCard);
+    NameCard findById(@Param("id") long id);
 
+    List<NameCard> findAll();
 }

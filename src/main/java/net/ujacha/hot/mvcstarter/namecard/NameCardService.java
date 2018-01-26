@@ -1,13 +1,44 @@
 package net.ujacha.hot.mvcstarter.namecard;
 
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
 import java.util.List;
 
-public interface NameCardService {
+@Service
+public class NameCardService {
 
-    public NameCard getNamecard(NameCard nameCard);
-    public List<NameCard> getNamecards(NameCard nameCard);
-    public NameCard createNamecard(NameCard nameCard);
-    public boolean updateNamecard(NameCard nameCard);
-    public boolean deleteNamecard(NameCard nameCard);
+    @Autowired
+    private SqlSession sqlSession;
 
+    private NameCardMapper nameCardMapper;
+
+    @PostConstruct
+    private void setup(){
+         nameCardMapper = sqlSession.getMapper(NameCardMapper.class);
+    }
+
+    public NameCard getNameCard(NameCard nameCard) {
+    return nameCardMapper.findById(nameCard.getId());
+    }
+
+    public List<NameCard> getAllNameCards() {
+        return nameCardMapper.findAll();
+    }
+
+    public NameCard createNameCard(NameCard nameCard) {
+        return null;
+    }
+
+    public boolean updateNameCard(NameCard nameCard) {
+        return false;
+    }
+
+    public boolean deleteNameCard(NameCard nameCard) {
+        return false;
+    }
 }

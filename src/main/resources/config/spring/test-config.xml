@@ -9,6 +9,6 @@
     <import resource="mybatis-config.xml"/>
     <import resource="aop-config.xml"/>
     <import resource="app-config.xml"/>
-    <import resource="mvc-config.xml"/>
+    <!--<import resource="mvc-config.xml"/>-->
 
 </beans>

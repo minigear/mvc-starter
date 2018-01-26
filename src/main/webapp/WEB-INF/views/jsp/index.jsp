@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<jsp:include page="common/common.jsp"/>
 <html>
 <head>
     <title>MVC STARTER</title>
@@ -14,7 +13,8 @@
 <div class="container">
 
     <h1>${message}</h1>
-
+    <label>CTX</label><input value="${ctx}">
+    <a href="${ctx}/namecards">Name Card</a>
 </div>
 
 

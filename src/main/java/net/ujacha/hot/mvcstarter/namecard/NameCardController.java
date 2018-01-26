@@ -1,36 +1,53 @@
 package net.ujacha.hot.mvcstarter.namecard;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.annotation.Resource;
+import java.util.List;
 
 @Controller
 @RequestMapping("namecards")
 public class NameCardController {
 
-//    @Autowired
-//    private NameCardService nameCardService;
+    private static final Logger LOGGER = LoggerFactory.getLogger(NameCardController.class);
 
-    @RequestMapping(name = "", method = RequestMethod.GET)
-    public String page(){
+    @Autowired
+    private NameCardService nameCardService;
+
+    @RequestMapping(value = "", method = RequestMethod.GET)
+    public String page(Model model){
+
+        List<NameCard> nameCards= nameCardService.getAllNameCards();
+
+        LOGGER.debug("nameCards : ", nameCards);
+
+        model.addAttribute("nameCards", nameCards);
+
         return "namecard/index";
     }
 
-    @RequestMapping(name = "", method = RequestMethod.GET, produces = "application/json")
-    public @ResponseBody NameCard get(){
+    @RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")
+    public @ResponseBody List<NameCard> getAll(){
 
-//        NameCard nameCard = new NameCard();
-//
-//        nameCard.setId(1);
-//
-//        nameCard = nameCardService.getNamecard(nameCard);
+        List<NameCard> nameCards = nameCardService.getAllNameCards();
+        return nameCards;
+    }
 
-        return null;
+    @RequestMapping(value = "{id}", method = RequestMethod.GET, produces = "application/json")
+    public @ResponseBody NameCard getOne(@PathVariable long id){
+
+        NameCard nameCard = new NameCard(id);
+
+        nameCard = nameCardService.getNameCard(nameCard);
+
+        return nameCard;
     }
 
 

@@ -17,6 +17,12 @@ public class NameCard {
         this.memo = memo;
     }
 
+    public NameCard(long id) {
+        this(id, null, null, null);
+    }
+
+    public NameCard() {}
+
     public long getId() {
         return id;
     }
