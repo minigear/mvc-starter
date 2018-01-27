@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:include page="common/common.jsp"/>
+<%@ include file="common/common.jsp"%>
 <html>
 <head>
     <title>MVC STARTER</title>

@@ -8,5 +8,6 @@ Accept: text/html
 ###
 GET http://localhost:8080/namecards
 Accept: application/json
+Content-Type: application/json
 
 ###

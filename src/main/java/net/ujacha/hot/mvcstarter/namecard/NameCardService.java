@@ -19,14 +19,19 @@ public class NameCardService {
 
     @PostConstruct
     private void setup(){
-         nameCardMapper = sqlSession.getMapper(NameCardMapper.class);
+
+        nameCardMapper = sqlSession.getMapper(NameCardMapper.class);
     }
 
     public NameCard getNameCard(NameCard nameCard) {
-    return nameCardMapper.findById(nameCard.getId());
+
+        nameCardMapper = sqlSession.getMapper(NameCardMapper.class);
+
+        return nameCardMapper.findById(nameCard.getId());
     }
 
     public List<NameCard> getAllNameCards() {
+        nameCardMapper = sqlSession.getMapper(NameCardMapper.class);
         return nameCardMapper.findAll();
     }
 
