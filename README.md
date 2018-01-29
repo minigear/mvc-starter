@@ -8,20 +8,26 @@
 * JSTL
 * Jackson Json
 * Logback
-
+* H2(embedded)
+* Mybatis
+  
 ## APPILACTION
 * nameCard
   * API
   * WEB(JSP)
-
-## TODO
+  
 * Spring Profile
   * local
   * dev
   * prd
-* Mybatis
+  
+  ```
+  -Dspring.profiles.active=dev
+  ```
+
+## TODO
+
 * Datasource
-  * H2
   * Mysql
 
 
